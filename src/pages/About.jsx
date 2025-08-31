@@ -121,33 +121,11 @@ export default function About() {
                             <div className="member-avatar">
                                 <span className="avatar-icon">👨‍💻</span>
                             </div>
-                            <h3>Alex Chen</h3>
-                            <p className="member-role">Founder & CEO</p>
+                            <h3>Osama Ahmed</h3>
+                            <p className="member-role">FrontEnd  & UI/UX</p>
                             <p className="member-bio">
                                 Gaming enthusiast with 15+ years of experience in the industry.
                                 Passionate about creating the ultimate gaming platform.
-                            </p>
-                        </div>
-                        <div className="team-member">
-                            <div className="member-avatar">
-                                <span className="avatar-icon">👩‍🎨</span>
-                            </div>
-                            <h3>Sarah Kim</h3>
-                            <p className="member-role">Lead Designer</p>
-                            <p className="member-bio">
-                                Creative designer focused on creating intuitive and beautiful
-                                user experiences for gamers of all levels.
-                            </p>
-                        </div>
-                        <div className="team-member">
-                            <div className="member-avatar">
-                                <span className="avatar-icon">👨‍🔬</span>
-                            </div>
-                            <h3>Mike Rodriguez</h3>
-                            <p className="member-role">Head of Technology</p>
-                            <p className="member-bio">
-                                Tech expert dedicated to building robust and scalable
-                                solutions for the gaming community.
                             </p>
                         </div>
                     </div>
