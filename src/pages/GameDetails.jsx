@@ -19,25 +19,33 @@ export default function GameDetails() {
             try {
                 setLoading(true);
 
-                // تفاصيل اللعبة
                 const resGame = await fetch(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`);
                 if (!resGame.ok) throw new Error("Game not found");
                 const gameData = await resGame.json();
 
-                // التريلرز
                 const resVideos = await fetch(`https://api.rawg.io/api/games/${id}/movies?key=${API_KEY}`);
                 const videoData = await resVideos.json();
 
-                // screenshots
-                const resScreens = await fetch(`https://api.rawg.io/api/games/${id}/screenshots?key=${API_KEY}`);
-                const screenData = await resScreens.json();
+                let allScreens = [];
+                let nextUrl = `https://api.rawg.io/api/games/${id}/screenshots?key=${API_KEY}&page_size=40`;
+
+                while (nextUrl) {
+                    const resScreens = await fetch(nextUrl);
+                    const screenData = await resScreens.json();
+
+                    if (screenData.results) {
+                        allScreens = [...allScreens, ...screenData.results];
+                    }
+
+                    nextUrl = screenData.next; 
+                }
 
                 setGame({
                     ...gameData,
                     trailers: videoData.results || [],
                 });
 
-                setScreenshots(screenData.results || []);
+                setScreenshots(allScreens);
 
             } catch (err) {
                 setError(err.message);
@@ -48,6 +56,7 @@ export default function GameDetails() {
 
         if (id) fetchGameDetails();
     }, [id]);
+
 
 
 
