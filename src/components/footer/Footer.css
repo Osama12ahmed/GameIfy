@@ -1,0 +1,50 @@
+/* Footer */
+.footer {
+    background: var(--background-card);
+    border-top: 1px solid var(--border-color);
+    padding: 30px 0;
+    margin-top: auto;
+  }
+  
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  }
+  
+  .footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer p {
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    color: var(--primary-color);
+  }
